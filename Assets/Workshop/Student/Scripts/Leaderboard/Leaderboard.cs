@@ -45,7 +45,7 @@ namespace Searching
                 }
             }
 
-            if (index == -1)
+            if (index != -1)
             {
                 scores.RemoveAt(index);
             }
@@ -63,7 +63,7 @@ namespace Searching
                 }
                 else if (scores[mid].score < score.score)
                 {
-                    index = mid + 1;
+                    left = mid + 1;
                 }
                 else
                 {
@@ -77,8 +77,7 @@ namespace Searching
                 index = left;
             }
 
-            scores.Add(score);
-
+            scores.Insert(index, score);
         }
 
         public void PrintScores()
